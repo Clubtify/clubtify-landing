@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page.title">Clubtify - Join the Club!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icons/clubtify_icon.png" type="image/png">
+</head>
+<body>
+
+    <main class="split-screen">
+        
+        <!-- LEFT SIZE: FORM JOIN / LOGIN STYLE -->
+        <div class="split-left">
+            <div class="left-content">
+
+                <!-- Logo -->
+                <div class="logo-top">
+                    <img src="assets/logo/clubtify_logo_b.png" alt="Clubtify" class="logo-image">
+                </div>
+
+                <!-- join header -->
+                <div class="join-header">
+                    <h1 data-i18n="waitlist.title">Join the Club.</h1>
+                    <p data-i18n="waitlist.subtitle">Claim your spot in a quieter, deeper social space.</p>
+                </div>
+
+                <!-- FORM -->
+                <form name="waitlist" method="POST" data-netlify="true" class="waitlist-form" action="/success-waitlist.html">
+                <input type="hidden" name="form-name" value="waitlist">   
+                    <div class="form-group">
+                        <label for="email" data-i18n="form.email_label">Email</label>
+                        <input type="email" id="email" name="email" required class="input-field" 
+                               placeholder="Enter your email" data-i18n-placeholder="form.email_placeholder">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jurisdiction" data-i18n="form.jurisdiction_label">Country / Data Jurisdiction</label>
+                        <select id="jurisdiction" name="jurisdiction" required class="input-field">
+                            <option value="" selected hidden data-i18n="form.country_placeholder">Select your region</option>
+                            
+                            <!-- EAST ASIA -->
+                            <optgroup label="East Asia" data-i18n="jurisdiction.group_east_asia">
+                                <option value="jp" data-i18n="jurisdiction.jp">Japan (APPI)</option>
+                                <option value="kr" data-i18n="jurisdiction.kr">South Korea (PIPA)</option>
+                                <option value="cn" data-i18n="jurisdiction.cn">China Mainland (PIPL)</option>
+                                <option value="hk" data-i18n="jurisdiction.hk">Hong Kong (PDPO)</option>
+                                <option value="mo" data-i18n="jurisdiction.mo">Macau (PDPL-Macau)</option>
+                                <option value="other_east_asia" data-i18n="jurisdiction.other_east_asia">Other East Asia</option>
+                            </optgroup>
+                            
+                            <!-- SOUTHEAST ASIA -->
+                            <optgroup label="Southeast Asia" data-i18n="jurisdiction.group_southeast_asia">
+                                <option value="sg" data-i18n="jurisdiction.sg">Singapore (PDPA)</option>
+                                <option value="th" data-i18n="jurisdiction.th">Thailand (PDPA)</option>
+                                <option value="id" data-i18n="jurisdiction.id">Indonesia (PDP Law)</option>
+                                <option value="vn" data-i18n="jurisdiction.vn">Vietnam (PDPL)</option>
+                                <option value="my" data-i18n="jurisdiction.my">Malaysia (PDPA)</option>
+                                <option value="ph" data-i18n="jurisdiction.ph">Philippines (DPA)</option>
+                                <option value="bn" data-i18n="jurisdiction.bn">Brunei (PDPO)</option>
+                                <option value="other_southeast_asia" data-i18n="jurisdiction.other_southeast_asia">Other Southeast Asia</option>
+                            </optgroup>
+                            
+                            <!-- SOUTH ASIA -->
+                            <optgroup label="South Asia" data-i18n="jurisdiction.group_south_asia">
+                                <option value="in" data-i18n="jurisdiction.in">India (DPDP Act)</option>
+                                <option value="lk" data-i18n="jurisdiction.lk">Sri Lanka (PDPA)</option>
+                                <option value="other_south_asia" data-i18n="jurisdiction.other_south_asia">Other South Asia</option>
+                            </optgroup>
+                            
+                            <!-- CENTRAL ASIA -->
+                            <optgroup label="Central Asia" data-i18n="jurisdiction.group_central_asia">
+                                <option value="other_central_asia" data-i18n="jurisdiction.other_central_asia">Other Central Asia</option>
+                            </optgroup>
+                            
+                            <!-- EUROPE -->
+                            <optgroup label="Europe" data-i18n="jurisdiction.group_europe">
+                                <option value="eu" data-i18n="jurisdiction.eu">European Union (GDPR)</option>
+                                <option value="uk" data-i18n="jurisdiction.uk">United Kingdom (UK GDPR)</option>
+                                <option value="ch" data-i18n="jurisdiction.ch">Switzerland (FADP)</option>
+                                <option value="other_europe" data-i18n="jurisdiction.other_europe">Other Europe</option>
+                            </optgroup>
+                            
+                            <!-- NORTH AMERICA -->
+                            <optgroup label="North America" data-i18n="jurisdiction.group_north_america">
+                                <option value="us" data-i18n="jurisdiction.us">United States</option>
+                                <option value="ca" data-i18n="jurisdiction.ca">Canada (PIPEDA)</option>
+                                <option value="mx" data-i18n="jurisdiction.mx">Mexico (LFPDPPP)</option>
+                                <option value="other_north_america" data-i18n="jurisdiction.other_north_america">Other North America</option>
+                            </optgroup>
+                            
+                            <!-- LATIN AMERICA -->
+                            <optgroup label="Latin America" data-i18n="jurisdiction.group_latin_america">
+                                <option value="br" data-i18n="jurisdiction.br">Brazil (LGPD)</option>
+                                <option value="ar" data-i18n="jurisdiction.ar">Argentina (PDPA)</option>
+                                <option value="cl" data-i18n="jurisdiction.cl">Chile (PDPL-Chile)</option>
+                                <option value="uy" data-i18n="jurisdiction.uy">Uruguay (PDPA)</option>
+                                <option value="co" data-i18n="jurisdiction.co">Colombia (PDPL-Colombia)</option>
+                                <option value="pe" data-i18n="jurisdiction.pe">Peru (PDPL)</option>
+                                <option value="other_latin_america" data-i18n="jurisdiction.other_latin_america">Other Latin America</option>
+                            </optgroup>
+                            
+                            <!-- MIDDLE EAST -->
+                            <optgroup label="Middle East" data-i18n="jurisdiction.group_middle_east">
+                                <option value="ae" data-i18n="jurisdiction.ae">United Arab Emirates (PDPL-UAE)</option>
+                                <option value="sa" data-i18n="jurisdiction.sa">Saudi Arabia (PDPL)</option>
+                                <option value="qa" data-i18n="jurisdiction.qa">Qatar (Qatar PDPL)</option>
+                                <option value="bh" data-i18n="jurisdiction.bh">Bahrain (PDPL)</option>
+                                <option value="om" data-i18n="jurisdiction.om">Oman (PDPL)</option>
+                                <option value="jo" data-i18n="jurisdiction.jo">Jordan (PDPL)</option>
+                                <option value="il" data-i18n="jurisdiction.il">Israel (PPL-Israel)</option>
+                                <option value="other_middle_east" data-i18n="jurisdiction.other_middle_east">Other Middle East</option>
+                            </optgroup>
+                            
+                            <!-- AFRICA -->
+                            <optgroup label="Africa" data-i18n="jurisdiction.group_africa">
+                                <option value="za" data-i18n="jurisdiction.za">South Africa (POPIA)</option>
+                                <option value="ng" data-i18n="jurisdiction.ng">Nigeria (NDPA)</option>
+                                <option value="ke" data-i18n="jurisdiction.ke">Kenya (DPA)</option>
+                                <option value="ma" data-i18n="jurisdiction.ma">Morocco (PDPL-Morocco)</option>
+                                <option value="eg" data-i18n="jurisdiction.eg">Egypt (PDPL)</option>
+                                <option value="other_africa" data-i18n="jurisdiction.other_africa">Other Africa</option>
+                            </optgroup>
+                            
+                            <!-- OCEANIA -->
+                            <optgroup label="Oceania" data-i18n="jurisdiction.group_oceania">
+                                <option value="au" data-i18n="jurisdiction.au">Australia (PA)</option>
+                                <option value="nz" data-i18n="jurisdiction.nz">New Zealand (PA)</option>
+                                <option value="other_oceania" data-i18n="jurisdiction.other_oceania">Other Oceania</option>
+                            </optgroup>
+                        </select>
+                        <p class="tiny-text" data-i18n="form.jurisdiction_note">*We use this to decide where your data resides legally.</p>
+                    </div>
+
+                    <button type="submit" class="btn-primary" data-i18n="form.submit_btn">Stay in the Loop</button>
+                </form>
+
+                <!-- Bottom links -->
+                <div class="bottom-links">
+                    <a href="how-it-works.html" data-i18n="nav.concept">The Concept</a> • 
+                    <a href="terms.html" data-i18n="nav.privacy">Privacy</a> • 
+                    <a href="feedback.html" data-i18n="nav.contribute">Contribute</a> • 
+                    <a href="https://github.com/clubtify" target="_blank" rel="noopener" data-i18n="nav.github">GitHub</a>
+                </div>
+
+                <!-- Footer left -->
+                <div class="page-footer">
+                    <p data-i18n="footer.copyright">© 2026 Clubtify. All rights reserved.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RIGHT SIZE: SLOGAN + Early-access benefits -->
+        <div class="split-right">
+            <!-- LANG -->
+            <div class="language-switcher">
+                <button id="langToggle" class="lang-btn" aria-label="Select language">
+                    <img src="assets/icons/language.svg" alt="Language" class="lang-icon">
+                    <span id="currentLang">EN</span>
+                </button>
+                <div id="langDropdown" class="lang-dropdown">
+                    <div class="lang-list">
+                        <button class="lang-option" data-lang="en">
+                            <span class="lang-name">English</span>
+                            <span class="lang-code">EN</span>
+                        </button>
+                        <button class="lang-option" data-lang="vi">
+                            <span class="lang-name">Tiếng Việt</span>
+                            <span class="lang-code">VI</span>
+                        </button>
+                        <button class="lang-option" data-lang="fr">
+                            <span class="lang-name">Français</span>
+                            <span class="lang-code">FR</span>
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <span class="lang-name">Deutsch</span>
+                            <span class="lang-code">DE</span>
+                        </button>
+                        <button class="lang-option" data-lang="es">
+                            <span class="lang-name">Español</span>
+                            <span class="lang-code">ES</span>
+                        </button>
+                        <button class="lang-option" data-lang="ja">
+                            <span class="lang-name">日本語</span>
+                            <span class="lang-code">JA</span>
+                        </button>
+                        <button class="lang-option" data-lang="zh-cn">
+                            <span class="lang-name">简体中文</span>
+                            <span class="lang-code">简中</span>
+                        </button>
+                        <button class="lang-option" data-lang="zh-tw">
+                            <span class="lang-name">繁體中文</span>
+                            <span class="lang-code">繁中</span>
+                        </button>
+                        <button class="lang-option" data-lang="ko">
+                            <span class="lang-name">한국어</span>
+                            <span class="lang-code">KO</span>
+                        </button>
+                        <button class="lang-option" data-lang="ru">
+                            <span class="lang-name">Русский</span>
+                            <span class="lang-code">RU</span>
+                        </button>
+                        <button class="lang-option" data-lang="pt">
+                            <span class="lang-name">Português</span>
+                            <span class="lang-code">PT</span>
+                        </button>
+                        <button class="lang-option" data-lang="it">
+                            <span class="lang-name">Italiano</span>
+                            <span class="lang-code">IT</span>
+                        </button>
+                        <button class="lang-option" data-lang="id">
+                            <span class="lang-name">Bahasa Indonesia</span>
+                            <span class="lang-code">ID</span>
+                        </button>
+                        <button class="lang-option" data-lang="hi">
+                            <span class="lang-name">हिन्दी</span>
+                            <span class="lang-code">HI</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="app-content">
+                <h1 class="app-title" data-i18n="hero.headline">Community-structured social network.</h1>
+                <p class="app-desc" data-i18n="hero.subhead">No ads. No tracking. Just meaningful shared spaces.</p>
+                
+                <ul class="app-features">
+                    <li>
+                        <span class="feature-icon">
+                            <img src="assets/icons/clubtify_icon_w.png" alt="Club icon">
+                        </span>
+                        <span data-i18n="hero.feature_1">Club-based social network</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">
+                            <img src="assets/icons/clubtify_icon_w.png" alt="Club icon">
+                        </span>
+                        <span data-i18n="hero.feature_2">Chat with your clubs in real-time</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">
+                            <img src="assets/icons/clubtify_icon_w.png" alt="Club icon">
+                        </span>
+                        <span data-i18n="hero.feature_3">Respects your data</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">
+                            <img src="assets/icons/clubtify_icon_w.png" alt="Club icon">
+                        </span>
+                        <span data-i18n="hero.feature_4">Transparent $1/mo model</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">
+                            <img src="assets/icons/clubtify_icon_w.png" alt="Club icon">
+                        </span>
+                        <span data-i18n="hero.feature_5">Owned by the community</span>
+                    </li>                    
+                </ul>
+
+                <!-- Block 2: Early Member Benefits -->
+                <div class="early-access">
+                    <h3 data-i18n="hero.early_title">Early Member Benefits</h3>
+                    <ul class="early-features">
+                        <li data-i18n="hero.early_feature_1">Get notified at launch!</li>
+                        <li data-i18n="hero.early_feature_2">3 months free when Clubtify launches!</li>
+                        <li data-i18n="hero.early_feature_3">Permanent <strong>"Founding User"</strong> badge — a mark of users who joined early!</li>
+                    </ul>
+                    <p class="note" data-i18n="hero.early_note">*This badge is purely historical and celebrates our earliest supporters.*</p>
+                    
+                    <!-- Contact link -->
+                    <div class="contact-footer">
+                        <p>
+                            <a href="feedback.html" data-i18n="footer.contact">Contact us</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

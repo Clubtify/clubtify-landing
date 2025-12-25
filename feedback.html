@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="feedback_page.page_title">Contribute - Clubtify</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icons/clubtify_icon.png" type="image/png">
+</head>
+<body>
+
+    <main class="concept-container">
+        <!-- Logo -->
+        <div class="concept-logo">
+            <a href="index.html">
+                <img src="assets/logo/clubtify_logo_b.png" alt="Clubtify" class="concept-logo-img">
+            </a>
+        </div>
+
+        <!-- main title -->
+        <div class="concept-header">
+            <h1 class="concept-title" data-i18n="feedback_page.title">Co-create Clubtify</h1>
+            <p class="concept-subtitle" data-i18n="feedback_page.subtitle">Help us build the right foundation. Share your thoughts, suggestions, or feedback.</p>
+        </div>
+
+        <!-- Form feedback -->
+        <div class="feedback-form-container">
+            <form name="feedback" method="POST" data-netlify="true" action="/success-feedback.html" class="feedback-form">
+            <input type="hidden" name="form-name" value="feedback">
+                <div class="form-intro">
+                    <p data-i18n="feedback_page.form_intro">Your input helps shape a platform that truly serves its community.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" data-i18n="feedback_page.name_label">Name (Optional)</label>
+                    <input type="text" id="name" name="name" class="input-field" 
+                           placeholder="Your name" data-i18n-placeholder="feedback_page.name_placeholder">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-i18n="feedback_page.email_label">Email (Optional)</label>
+                    <input type="email" id="email" name="email" class="input-field"
+                           placeholder="If you want us to reply" data-i18n-placeholder="feedback_page.email_placeholder">
+                    <span class="form-note" data-i18n="feedback_page.email_note">We'll only use this to respond to your feedback.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="idea" data-i18n="feedback_page.idea_label">Your Idea or Feedback</label>
+                    <textarea id="idea" name="idea" class="input-field textarea-field" rows="6" required
+                              placeholder="What would make Clubtify better? What features matter most to you?" 
+                              data-i18n-placeholder="feedback_page.idea_placeholder"></textarea>
+                    <span class="form-note" data-i18n="feedback_page.idea_note">Be as detailed as you like. All feedback is valuable.</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="anonymous" id="anonymous" value="yes">
+                        <span data-i18n="feedback_page.anonymous_label">Submit anonymously (your name/email won't be saved)</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary submit-btn" data-i18n="feedback_page.submit_btn">Send Contribution</button>
+                    <a href="index.html" class="btn-secondary" data-i18n="nav.back_home">Back to Home</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="page-footer">
+            <p data-i18n="footer.copyright">© 2026 Clubtify. All rights reserved.</p>
+        </div>        
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script>
+        // checkbox anonymous
+        document.addEventListener('DOMContentLoaded', function() {
+            const anonymousCheckbox = document.getElementById('anonymous');
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            
+            anonymousCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    nameField.disabled = true;
+                    emailField.disabled = true;
+                    nameField.value = '';
+                    emailField.value = '';
+                    nameField.placeholder = 'Submitted anonymously';
+                    emailField.placeholder = 'Submitted anonymously';
+                } else {
+                    nameField.disabled = false;
+                    emailField.disabled = false;
+                    nameField.placeholder = 'Your name';
+                    emailField.placeholder = 'If you want us to reply';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
